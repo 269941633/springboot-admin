@@ -1,0 +1,24 @@
+logging:
+  config: classpath:logback.xml
+  path: d:/logs
+server:
+  port: 8081
+  session-timeout: 60
+
+spring:
+    boot:
+        admin:
+           client:
+              prefer-ip: true  #解决window下无法识别主机名的问题
+           url: http://localhost   #服务端的地址
+
+management:
+     security:
+        enabled: false
+
+info:
+   app:
+       name: "@project.name@"  #从pom.xml中获取,pom.xml中需build中加入插件spring-boot-maven-plugin
+       description: "@project.description@" 
+       version: "@project.version@"
+       spring-boot-version: "@project.parent.version@"
